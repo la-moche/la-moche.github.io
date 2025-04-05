@@ -1,0 +1,47 @@
+@font-face {
+  font-family: Roboto;
+  src: url("fonts/Roboto-Regular.ttf") format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f9;
+  font-family: Roboto, sans-serif;
+}
+
+/* BEGIN (write your solution here) */
+.box {
+  width: 300px;
+  padding: 20px;
+  background: white;
+  border-color: #ddd;
+  border-width: 2px;
+  border-style: solid;
+  text-align: center;
+  border-radius: 8px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding-bottom: 15px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 24px;
+  color: #666;
+  margin: 0;
+} /* END */
