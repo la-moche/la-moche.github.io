@@ -1,4 +1,3 @@
-
 /* Подключение шрифтов */
 @font-face {
   font-family: 'Brygada 1918';
@@ -8,86 +7,81 @@
 @font-face {
   font-family: 'Open Sans';
   src: url('../assets/fonts/OpenSans-Regular.woff2') format('woff2');
-  font-weight: normal;
+  font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Open Sans Bold';
+  font-family: 'Open Sans';
   src: url('../assets/fonts/OpenSans-Bold.woff2') format('woff2');
-  font-weight: bold;
+  font-weight: 700;
 }
 
-/* Стили для body */
+/* Базовые стили */
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Open Sans', sans-serif;
   line-height: 2.3;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 
-/* Контейнер Hero Section */
 .hero-container {
-  display: flex;
   width: 1280px;
-  padding: 100px 30px;
-  box-sizing: border-box;
+  display: flex;
+  padding: 100px 0;
 }
 
-/* Левая колонка */
+.hero-left, .hero-right {
+  width: 50%;
+  height: 713px;
+  padding: 0 30px;
+}
+
 .hero-left {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  height: 713px;
 }
 
-.hero-left .number {
-  position: absolute;
+.number {
+  position: relative;
   top: 30px;
   left: -100px;
-  font-size: 96px;
+  font-size: 24px;
   font-family: 'Brygada 1918', serif;
-  color: #e0e0e0;
+  color: #888;
 }
 
-.hero-left h1 {
-  font-family: 'Brygada 1918', serif;
+h1 {
   font-size: 48px;
+  font-family: 'Brygada 1918', serif;
   margin: 0 0 20px;
 }
 
-.hero-left .highlight {
-  color: #ff5722;
+.highlight {
+  color: #007bff; /* или нужный цвет из макета */
 }
 
-.hero-left p {
+p {
   font-size: 18px;
-  margin: 0 0 30px;
+  margin-bottom: 30px;
 }
 
 .cta-button {
-  font-size: 18px;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
-  color: #000;
-  display: inline-block;
+  font-size: 18px;
   line-height: 0;
+  color: #000;
 }
 
-/* Правая колонка */
 .hero-right {
-  flex: 1;
-  text-align: center;
-  height: 713px;
+  text-align: right;
 }
 
 .hero-right img {
-  max-width: 100%;
-  height: auto;
+  max-height: 100%;
 }
