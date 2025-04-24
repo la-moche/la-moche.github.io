@@ -1,112 +1,111 @@
-/* Подключение шрифтов */
+/* BEGIN */
 @font-face {
   font-family: 'Brygada 1918';
   src: url('../assets/fonts/Brygada-1918.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Open Sans';
   src: url('../assets/fonts/OpenSans-Regular.woff2') format('woff2');
-  font-weight: 400;
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Open Sans';
   src: url('../assets/fonts/OpenSans-Bold.woff2') format('woff2');
-  font-weight: 700;
+  font-weight: bold;
+  font-style: normal;
 }
 
-/* Базовые стили */
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 2.3;
-  display: flex;
-  justify-content: center;
-  background-color: #fff;
+  box-sizing: border-box;
 }
 
-.hero-container {
-  width: 1280px;
+body {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 2.3;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  width: 1280px;
   padding: 100px 0;
 }
 
-.hero-left, .hero-right {
+.column {
   width: 50%;
   height: 713px;
-  padding: 0 30px;
 }
 
-.hero-left {
+.left-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  padding: 0 30px;
+  position: relative;
 }
 
-.profession {
-  position: relative;
-  width: 123;
-height: 33;
-top: -1px;
-left: 100px;
-font-family: Open Sans;
-font-weight: 700;
-font-size: 14px;
-line-height: 32.2px;
-letter-spacing: 4.2px;
-vertical-align: middle;
-text-transform: uppercase;
-background: #F7DF1E;
+.right-column {
+  padding: 0 30px;
+  text-align: center;
+}
 
+.hero-image {
+  max-width: 100%;
+  height: auto;
 }
 
 .number {
   position: relative;
-  width: 234;
-top: 30px;
-left: -100px;
-opacity: 0.1;
-font-family: Open Sans;
-font-weight: 700;
-font-size: 200px;
-line-height: 0px;
-letter-spacing: 4.2px;
-vertical-align: middle;
-text-transform: uppercase;
-background: #FFFFFF;
-
-}
-
-h1 {
-  font-size: 48px;
+  top: 30px;
+  left: -100px;
   font-family: 'Brygada 1918', serif;
-  margin: 0 0 20px;
+  font-size: 48px;
+  color: #EDEDED;
 }
 
-.highlight {
-  color: #007bff; /* или нужный цвет из макета */
-}
-
-p {
-  font-size: 18px;
+.title {
+  font-family: 'Brygada 1918', serif;
+  font-size: 48px;
+  color: #000000;
   margin-bottom: 30px;
 }
 
-.cta-button {
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 18px;
+.description {
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #FFFFFF;
+  background-color: #5222D0;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #4117B0;
+}
+
+.arrow {
+  margin-left: 10px;
   line-height: 0;
-  color: #000;
 }
-
-.hero-right {
-  text-align: right;
-}
-
-.hero-right img {
-  max-height: 100%;
-}
+/* END */
