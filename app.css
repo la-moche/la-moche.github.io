@@ -53,7 +53,8 @@ body {
 }
 
 .hexlet-checkbox-label:hover::before {
-  background: var(--checkbox-checked);
+  /*background: var(--checkbox-checked);*/
+  background-color: #288cff;
   opacity: 0.5;
 }
 
