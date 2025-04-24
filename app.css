@@ -1,66 +1,112 @@
-:root {
-  /*
-    Переменная для свойства background. Здесь сокращённая запись свойств в таком порядке:
-    background-image
-    background-position / background-size
-    background-repeat
-    background-color
-  */
-  --checkbox-checked: url("check.png") center / 0.5rem no-repeat #288cff;
-  --checkbox-side: 1rem;
-  --checkbox-border: 1px solid #ced4da;
-  --checkbox-radius: 0.3rem;
-  --checkbox-label-before-left: -1.5rem;
+/* Подключение шрифтов */
+@font-face {
+  font-family: 'Brygada 1918';
+  src: url('../assets/fonts/Brygada-1918.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+
+/* Базовые стили */
 body {
-  font: 18px/1.5 sans-serif;
-
-  background: #f8fafc;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 2.3;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
 }
 
-.hexlet-control {
-  padding-left: 2rem;
+.hero-container {
+  width: 1280px;
+  display: flex;
+  padding: 100px 0;
 }
 
-.hexlet-checkbox {
-  position: absolute;
-
-  opacity: 0;
+.hero-left, .hero-right {
+  width: 50%;
+  height: 713px;
+  padding: 0 30px;
 }
 
-/* BEGIN */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
 
-.hexlet-checkbox-label {
+.profession {
   position: relative;
+  width: 123;
+height: 33;
+top: -1px;
+left: 100px;
+font-family: Open Sans;
+font-weight: 700;
+font-size: 14px;
+line-height: 32.2px;
+letter-spacing: 4.2px;
+vertical-align: middle;
+text-transform: uppercase;
+background: #F7DF1E;
 
-  cursor: pointer;
 }
 
-.hexlet-checkbox-label::before {
-  position: absolute;
-  top: 0;
-  left: var(--checkbox-label-before-left);
+.number {
+  position: relative;
+  width: 234;
+top: 30px;
+left: -100px;
+opacity: 0.1;
+font-family: Open Sans;
+font-weight: 700;
+font-size: 200px;
+line-height: 0px;
+letter-spacing: 4.2px;
+vertical-align: middle;
+text-transform: uppercase;
+background: #FFFFFF;
 
-  display: block;
-  width: var(--checkbox-side);
-  height: var(--checkbox-side);
-
-  border: var(--checkbox-border);
-  border-radius: var(--checkbox-radius);
-
-  content: "";
 }
 
-.hexlet-checkbox-label:hover::before {
-  /*background: var(--checkbox-checked);*/
-  background-color: #288cff;
-  opacity: 0.5;
+h1 {
+  font-size: 48px;
+  font-family: 'Brygada 1918', serif;
+  margin: 0 0 20px;
 }
 
-.hexlet-checkbox:checked ~ .hexlet-checkbox-label::before {
-  background: var(--checkbox-checked);
-  opacity: 1;
+.highlight {
+  color: #007bff; /* или нужный цвет из макета */
 }
 
-/* END */
+p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 0;
+  color: #000;
+}
+
+.hero-right {
+  text-align: right;
+}
+
+.hero-right img {
+  max-height: 100%;
+}
