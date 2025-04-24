@@ -1,0 +1,153 @@
+/* BEGIN */
+@font-face {
+  font-family: "Brygada 1918";
+  src: url("../assets/fonts/Brygada-1918.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../assets/fonts/OpenSans-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../assets/fonts/OpenSans-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /*box-sizing: border-box;*/
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  line-height: 2.3;
+  min-height: 100vh;
+  background: #0b1d26;
+}
+
+.container {
+  display: flex;
+  width: 1280px;
+  padding: 100px 0;
+}
+
+.column {
+  width: 50%;
+  height: 713px;
+  /**/
+  border: 1px solid #fff;
+  /**/
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 30px;
+  position: relative;
+}
+.tagline {
+  position: relative;
+}
+.tagline::after {
+  position: absolute;
+  content: "01";
+  top: 30px;
+  left: -70px;
+  opacity: 10%;
+  font-family: Open Sans;
+  font-weight: 700;
+  font-size: 200px;
+  line-height: 0px;
+  letter-spacing: 4.2px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.profession {
+  position: relative;
+  top: -1px;
+  left: 100px;
+  font-family: Open Sans;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 32.2px;
+  letter-spacing: 4.2px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: #f7df1e;
+}
+
+.profession::before {
+  content: "";
+  position: absolute;
+  top: 50%; /* Центрируем по вертикали */
+  left: -80px; /* Позиционируем слева */
+  width: 50px; /* Длина линии */
+  height: 2px; /* Толщина линии */
+  background-color: #f7df1e;
+  transform: translateY(-50%);
+}
+
+.title {
+  font-family: Brygada 1918;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 70.4px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #ffffff;
+  width: 415px;
+  height: 145px;
+  left: 15px;
+  position: relative;
+}
+
+.description {
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 36.8px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #ffffff;
+}
+
+.try {
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 39.1px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #f7df1e;
+}
+
+.try .arrow {
+  top: 100px;
+  margin-left: 10px;
+  line-height: 0;
+}
+
+.right-column {
+  padding: 0 30px;
+  text-align: center;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+}
+/* END */
