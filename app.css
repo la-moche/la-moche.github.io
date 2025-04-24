@@ -6,7 +6,7 @@
     background-repeat
     background-color
   */
-  --checkbox-checked: url("../assets/images/check.png") center / 0.5rem no-repeat #288cff;
+  --checkbox-checked: url("check.png") center / 0.5rem no-repeat #288cff;
   --checkbox-side: 1rem;
   --checkbox-border: 1px solid #ced4da;
   --checkbox-radius: 0.3rem;
