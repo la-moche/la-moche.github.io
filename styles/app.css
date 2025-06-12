@@ -1,18 +1,20 @@
-/* Подключение шрифтов */
+/* BEGIN (write your solution here) */
 @font-face {
-  font-family: "Raleway";
-  src: url("../assets/fonts/Raleway-Regular.ttf") format("truetype");
+  font-family: 'Raleway';
+  src: url('../assets/fonts/Raleway-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
-  font-family: "Raleway";
-  src: url("../assets/fonts/Raleway-Bold.ttf") format("truetype");
+  font-family: 'Raleway';
+  src: url('../assets/fonts/Raleway-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
-/* Основные стили */
+/* END */
+
 body {
   box-sizing: border-box;
   width: 100vw;
@@ -21,9 +23,12 @@ body {
   padding: 50px;
 
   color: #eee;
+
+  /* BEGIN (write your solution here) */
+  font-family: 'Raleway', sans-serif;
   font-size: 20px;
   line-height: 1.5;
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  /* END */
 
   background-image: linear-gradient(to right top, #222831, #282d36, #2d333b, #333841, #393e46);
 }
@@ -35,7 +40,6 @@ img {
 
 a {
   color: inherit;
-  text-decoration: none;
 }
 
 h1 {
@@ -51,115 +55,49 @@ h2 {
   width: 1024px;
   margin: 0 auto;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 1fr;
-  gap: 0;
+  /* BEGIN (write your solution here) */
+  display: flex;
+  flex-direction: column;
+  /* END */
 }
 
-.span-all {
-  column-span: all;
-  grid-column: 1 / -1;
-}
-
-.tabs-nav {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column: 1 / -1;
+.tabs-links {
+  display: flex;
+  justify-content: space-between;
 }
 
 .tab-name {
   display: block;
-  padding: 20px 0;
+  padding: 20px;
   text-align: center;
-  background: #00adb5;
-  font-size: 1em;
-  border: none;
-  outline: none;
-  border-bottom: 3px solid transparent;
-  transition: border-color 0.2s;
-  cursor: pointer;
-  user-select: none;
+  background-color: #00adb5;
+  color: #fff;
+  text-decoration: none;
+  transition: border-bottom 0.3s;
 }
 
-/* Состояния по hover и focus */
 .tab-name:hover,
 .tab-name:focus {
   border-bottom: 3px solid #5ffbf1;
-  z-index: 2;
 }
 
-/* Контейнер с вкладками */
 .tabs-content {
-  background: #393e46;
-  grid-column: 1 / -1;
-  display: block;
-  width: 100%;
-  padding: 0;
-}
-
-/* Стили для содержимого вкладок */
-.tabs-content-item {
-  display: none;
-  box-sizing: border-box;
+  background-color: #393e46;
   padding: 20px;
-  width: 100%;
-  height: 100%;
-  /* Три колонки с отступами */
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Отступы между элементами */
 }
 
-.tabs-content-item h2 {
-  margin-top: 0;
+.tabs-content-item {
+  display: none; /* По умолчанию все элементы скрыты */
+  padding: 20px;
 }
 
-.tabs-content-item img {
-  grid-row: 1 / span 2;
-  grid-column: 1 / 2;
-  align-self: start;
-  justify-self: center;
-  object-fit: contain;
+.tab-name.active + .tabs-content-item {
+  display: block; /* Показываем соответствующую вкладку при активации */
 }
 
-.tabs-content-item > div {
-  grid-column: 2 / 4;
-  display: block;
+.span-all {
+  column-span: all;
 }
-
-/* По умолчанию показываем первую вкладку */
-.tab-name[data-tab="html"]:hover ~ .tabs-content .tabs-content-item[data-tab-content="html"],
-.tab-name[data-tab="html"]:focus ~ .tabs-content .tabs-content-item[data-tab-content="html"],
-.tab-name[data-tab="css"]:hover ~ .tabs-content .tabs-content-item[data-tab-content="css"],
-.tab-name[data-tab="css"]:focus ~ .tabs-content .tabs-content-item[data-tab-content="css"],
-.tab-name[data-tab="js"]:hover ~ .tabs-content .tabs-content-item[data-tab-content="js"],
-.tab-name[data-tab="js"]:focus ~ .tabs-content .tabs-content-item[data-tab-content="js"] {
-  display: grid;
-}
-
-/* Отображать первую вкладку если ни одна не выбрана */
-.tabs-nav:focus-within ~ .tabs-content .tabs-content-item,
-.tabs-content-item:first-child {
-  display: grid;
-}
-
-/* Скрыть все вкладки, если другая выбрана */
-.tabs-content-item:not(:first-child) {
-  display: none;
-}
-
-/* Показываем нужную вкладку при наведении/фокусе */
-.tab-name:focus ~ .tabs-content .tabs-content-item,
-.tab-name:hover ~ .tabs-content .tabs-content-item {
-  display: none;
-}
-
-/* Колонки внутри вкладки */
-.tabs-content-item > div {
-  column-count: 2;
-  column-gap: 30px;
-}
-
-/* END */
