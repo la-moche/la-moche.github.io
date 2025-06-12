@@ -121,8 +121,6 @@ h2 {
   grid-column: 1 / 2;
   align-self: start;
   justify-self: center;
-  width: 180px;
-  height: 180px;
   object-fit: contain;
 }
 
