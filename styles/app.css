@@ -28,8 +28,8 @@ body {
   width: 980px;
   height: 100vh;
 
-  background-image: url("../assets/images/future-poster.jpg");
-  /* background-image: url("https://i.postimg.cc/5y2CDHy6/future-poster.jpg"); */
+  /*background-image: url("../assets/images/future-poster.jpg");*/
+  background-image: url("https://i.postimg.cc/5y2CDHy6/future-poster.jpg");
   background-position-x: center;
   background-size: cover;
 }
