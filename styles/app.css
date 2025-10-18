@@ -1,137 +1,104 @@
-@font-face {
-  font-family: "Raleway";
-  src: url("../assets/fonts/Raleway-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Raleway";
-  src: url("../assets/fonts/Raleway-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
+/* BEGIN (write your solution here) */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+/* END */
 
 body {
-  box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
   margin: 0;
-  padding: 50px;
-
-  color: #eee;
-  font-size: 20px;
-  line-height: 1.5;
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
-
-  background-image: linear-gradient(to right top, #222831, #282d36, #2d333b, #333841, #393e46);
+  font-family: "Roboto", sans-serif;
+  background-color: #15141c;
 }
 
-img {
-  max-width: 100%;
-  vertical-align: middle;
+/* BEGIN (write your solution here) */
+.future-poster {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-h1 {
-  font-size: 2em;
-}
-
-h2 {
-  color: #00adb5;
-  font-size: 1.5em;
-}
-
-.tabs {
-  width: 1024px;
-  margin: 0 auto;
+.poster-grid {
+  position: relative;
+  width: 980px;
+  height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 1fr;
-  gap: 0;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  background: transparent;
 }
 
-.span-all {
-  grid-column: 1 / -1;
+/* Фоновое изображение */
+.poster-bg {
+  grid-column: 1 / 6;
+  grid-row: 1 / 6;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("https://i.postimg.cc/5y2CDHy6/future-poster.jpg") center no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-color: #673ab7;
+  opacity: 0.6;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 0;
 }
 
-.tabs-nav {
-  display: contents;
+/* Заголовок */
+.poster-title {
+  color: #fff;
+  font-size: 4em;
+  grid-column: 4 / 7;
+  grid-row: 2 / 5;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0 50px;
+  font-weight: 700;
+  line-height: 1.1;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  z-index: 2;
+  width: 60%;
 }
 
-.tab-name {
-  display: block;
-  padding: 20px 0;
-  text-align: center;
-  background: #00adb5;
-  font-size: 1em;
-  border: none;
-  outline: none;
-  border-bottom: 3px solid transparent;
-  transition: border-color 0.2s;
-  cursor: pointer;
-  user-select: none;
-}
-
-.tab-name:hover,
-.tab-name:focus {
-  border-bottom: 3px solid #5ffbf1;
+.poster-subtitle {
+  color: #fff;
+  font-size: 2em;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 50px;
+  position: absolute;
+  left: 0;
+  bottom: 80px;
   z-index: 2;
 }
 
-.tabs-content {
-  background: #393e46;
-  grid-column: 1 / -1;
+/* Прозрачные ячейки поверх изображения */
+.cell {
+  position: absolute;
+  background: #15141c;
+  z-index: 3;
 }
 
-.tabs-content-item {
-  display: none;
-  box-sizing: border-box;
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 220px 1fr 1fr;
-  gap: 30px;
-  align-items: start;
+.cell-1 {
+  /* Оставляем пустое место в 3-4 ряду (ячейка слева) */
+  left: 0;
+  top: calc(2 * (100vh / 6));
+  width: calc(2 * (980px / 6));
+  height: calc(1 * (100vh / 6));
 }
 
-.tabs-content-item img {
-  grid-row: 1 / span 3;
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-  align-self: start;
-  justify-self: center;
+.cell-2 {
+  /* Маленький квадрат справа снизу */
+  right: 0;
+  bottom: 0;
+  width: calc(1 * (980px / 6));
+  height: calc(1 * (100vh / 6));
 }
 
-.tabs-content-item h2 {
-  grid-column: 2 / 4;
-  margin-top: 0;
-}
-
-.tabs-content-item p {
-  grid-column: 2 / 4;
-}
-
-/* По умолчанию показываем первую вкладку */
-.tabs-content-item:first-child {
-  display: grid;
-}
-
-/* При наведении/фокусе на вкладку показывать соответствующий контент */
-.tab-name[data-tab="html"]:hover ~ .tabs-content .tabs-content-item[data-tab-content="html"],
-.tab-name[data-tab="html"]:focus ~ .tabs-content .tabs-content-item[data-tab-content="html"] {
-  display: grid;
-}
-.tab-name[data-tab="css"]:hover ~ .tabs-content .tabs-content-item[data-tab-content="css"],
-.tab-name[data-tab="css"]:focus ~ .tabs-content .tabs-content-item[data-tab-content="css"] {
-  display: grid;
-}
-.tab-name[data-tab="js"]:hover ~ .tabs-content .tabs-content-item[data-tab-content="js"],
-.tab-name[data-tab="js"]:focus ~ .tabs-content .tabs-content-item[data-tab-content="js"] {
-  display: grid;
-}
+/* END */
