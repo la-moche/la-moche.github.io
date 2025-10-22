@@ -35,13 +35,13 @@ body {
 }
 
 .poster-cell {
-  background-color: var(--color-black);
+  background-color: #15141c;
   /* border: 1px solid #fff; */
   /* box-sizing: border-box; */
 }
 
 .poster-bg {
-  background-color: var(--color-transparent);
+  background-color: #673ab7;
   opacity: 0.6;
 }
 
