@@ -1,0 +1,72 @@
+/* BEGIN (write your solution here) */
+@font-face {
+  font-family: Roboto;
+  font-weight: 700;
+  src: url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+:root {
+  --color-transparent: #673ab7;
+  --color-black: #15141c;
+}
+
+/* END */
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #15141c;
+}
+
+/* BEGIN (write your solution here) */
+.future-poster {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+
+  margin: 0 auto;
+  width: 980px;
+  height: 100vh;
+
+ /* background-image: url("../assets/images/future-poster.jpg"); */
+  background-image: url("https://i.postimg.cc/5y2CDHy6/future-poster.jpg");
+  background-position-x: center;
+  background-size: cover;
+}
+
+.poster-cell {
+  background-color: var(--color-black);
+  /* border: 1px solid #fff; */
+  /* box-sizing: border-box; */
+}
+
+.poster-bg {
+  background-color: var(--color-transparent);
+  opacity: 0.6;
+}
+
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.span-3 {
+  grid-column: span 3;
+}
+
+
+.header-cell {
+  font-size: 4em;
+  padding: 0 50px;
+  color: #fff;
+  text-align: right;
+}
+
+.header-cell-2 {
+  font-size: 2em;
+  padding: 0 20px;
+  color: #fff;
+  text-align: left;
+}
+
+/* END */
